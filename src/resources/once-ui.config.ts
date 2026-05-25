@@ -13,6 +13,60 @@ import {
 } from "@/types";
 import { home } from "./index";
 
+import localFont from "next/font/local";
+
+const vazirmatn = localFont({
+  src: [
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-Thin.woff2",
+      weight: "100",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-ExtraLight.woff2",
+      weight: "200",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-Light.woff2",
+      weight: "300",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-Regular.woff2",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-Medium.woff2",
+      weight: "500",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-SemiBold.woff2",
+      weight: "600",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-Bold.woff2",
+      weight: "700",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-ExtraBold.woff2",
+      weight: "800",
+      style: "normal",
+    },
+    {
+      path: "../assets/fonts/vazirmatn/Vazirmatn-FD-Black.woff2",
+      weight: "900",
+      style: "normal",
+    },
+  ],
+  variable: "--font-vazirmatn",
+  display: "swap",
+});
+
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://demo.magic-portfolio.com";
 
@@ -36,27 +90,8 @@ const protectedRoutes: ProtectedRoutesConfig = {
   "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
 };
 
-// Import and set font for each variant
-import { Geist } from "next/font/google";
 import { Geist_Mono } from "next/font/google";
 
-const heading = Geist({
-  variable: "--font-heading",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const body = Geist({
-  variable: "--font-body",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const label = Geist({
-  variable: "--font-label",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 const code = Geist_Mono({
   variable: "--font-code",
@@ -65,9 +100,9 @@ const code = Geist_Mono({
 });
 
 const fonts: FontsConfig = {
-  heading: heading,
-  body: body,
-  label: label,
+  heading: vazirmatn,
+  body: vazirmatn,
+  label: vazirmatn,
   code: code,
 };
 

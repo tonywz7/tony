@@ -1,27 +1,24 @@
-import { About, Blog, Gallery, Home, Newsletter, Person, Social, Work } from "@/types";
-import { Line, Row, Text } from "@once-ui-system/core";
+import {About, Blog, Gallery, Home, Newsletter, Person, Social, Work} from "@/types";
+import {Line, Row, Text} from "@once-ui-system/core";
 
 const person: Person = {
-  firstName: "Selene",
-  lastName: "Yu",
-  name: `Selene Yu`,
-  role: "Design Engineer",
+  firstName: "حسن",
+  lastName: "حلاجی",
+  name: `حسن حلاجی`,
+  role: "مهندس طراحی",
   avatar: "/images/avatar.jpg",
-  email: "example@gmail.com",
-  location: "Asia/Jakarta", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
-  languages: ["English", "Bahasa"], // optional: Leave the array empty if you don't want to display languages
+  email: "halaji96@gmail.com",
+  location: "Asia/Tehran",
+  languages: ["English", "Persian"],
 };
 
 const newsletter: Newsletter = {
   display: true,
-  title: <>Subscribe to {person.firstName}'s Newsletter</>,
-  description: <>My weekly newsletter about creativity and engineering</>,
+  title: <>عضویت در خبرنامه {person.firstName}</>,
+  description: <>خبرنامه هفتگی من درباره خلاقیت و مهندسی</>,
 };
 
 const social: Social = [
-  // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
-  // Set essentials: true for links you want to show on the about page
   {
     name: "GitHub",
     icon: "github",
@@ -57,35 +54,41 @@ const social: Social = [
 const home: Home = {
   path: "/",
   image: "/images/og/home.jpg",
-  label: "Home",
-  title: `${person.name}'s Portfolio`,
-  description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building bridges between design and code</>,
+  label: "خانه",
+  title: `پورتفولیوی ${person.name}`,
+  description: `وب‌سایت پورتفولیو برای نمایش پروژه‌ها و فعالیت‌های ${person.role}`,
+  headline: <>ساختن پلی میان طراحی و کدنویسی</>,
   featured: {
     display: true,
     title: (
-      <Row gap="12" vertical="center">
-        <strong className="ml-4">Once UI</strong>{" "}
-        <Line background="brand-alpha-strong" vert height="20" />
-        <Text marginRight="4" onBackground="brand-medium">
-          Featured work
-        </Text>
-      </Row>
+        <Row gap="12" vertical="center">
+          <strong className="ml-4">اپلیکیشن بنیان</strong>
+          <Line background="brand-alpha-strong" vert height="20" />
+          <Text marginRight="4" onBackground="brand-medium">
+            پروژه برجسته
+          </Text>
+        </Row>
     ),
     href: "/work/building-once-ui-a-customizable-design-system",
   },
   subline: (
-    <>
-    I'm Selene, a design engineer at <Text as="span" size="xl" weight="strong">ONCE UI</Text>, where I craft intuitive <br /> user experiences. After hours, I build my own projects.
-</>
+      <>
+        من حسن هستم، مهندس طراحی در{" "}
+        <Text as="span" size="xl" weight="strong">
+          ONCE UI
+        </Text>
+        ، جایی که تجربه‌های کاربری ساده و کاربردی طراحی می‌کنم.
+        <br />
+        خارج از ساعات کاری هم روی پروژه‌های شخصی خودم کار می‌کنم.
+      </>
   ),
 };
 
 const about: About = {
   path: "/about",
-  label: "About",
-  title: `About – ${person.name}`,
-  description: `Meet ${person.name}, ${person.role} from ${person.location}`,
+  label: "درباره من",
+  title: `درباره من – ${person.name}`,
+  description: `آشنایی با ${person.name}، ${person.role} از ${person.location}`,
   tableOfContent: {
     display: true,
     subItems: false,
@@ -99,35 +102,34 @@ const about: About = {
   },
   intro: {
     display: true,
-    title: "Introduction",
+    title: "معرفی",
     description: (
-      <>
-        Selene is a Jakarta-based design engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. Her work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
-      </>
+        <>
+          حسن یک مهندس طراحی با علاقه‌ به تبدیل چالش‌های پیچیده به راهکارهای
+          ساده و زیباست. فعالیت‌های او شامل طراحی رابط کاربری، تجربه‌های
+          تعاملی و تلفیق طراحی با تکنولوژی می‌شود.
+        </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
-    title: "Work Experience",
+    display: true,
+    title: "سوابق کاری",
     experiences: [
       {
         company: "FLY",
-        timeframe: "2022 - Present",
-        role: "Senior Design Engineer",
+        timeframe: "۲۰۲۲ - اکنون",
+        role: "مهندس ارشد طراحی",
         achievements: [
           <>
-            Redesigned the UI/UX for the FLY platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            بازطراحی رابط و تجربه کاربری پلتفرم FLY که منجر به افزایش ۲۰ درصدی
+            تعامل کاربران و ۳۰ درصد بهبود سرعت بارگذاری شد.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            هدایت فرایند استفاده از ابزارهای هوش مصنوعی در طراحی که باعث شد
+            سرعت انجام طراحی‌ها تا ۵۰ درصد افزایش پیدا کند.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
             src: "/images/projects/project-01/cover-01.jpg",
             alt: "Once UI Project",
@@ -138,16 +140,16 @@ const about: About = {
       },
       {
         company: "Creativ3",
-        timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        timeframe: "۲۰۱۸ - ۲۰۲۲",
+        role: "طراح ارشد",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            توسعه یک دیزاین سیستم یکپارچه که هماهنگی برند را در پلتفرم‌های
+            مختلف تا ۴۰ درصد بهبود داد.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            رهبری تیم میان‌رشته‌ای برای عرضه یک محصول جدید که باعث افزایش
+            ۱۵ درصدی درآمد شرکت شد.
           </>,
         ],
         images: [],
@@ -155,27 +157,30 @@ const about: About = {
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
-    title: "Studies",
+    display: true,
+    title: "تحصیلات",
     institutions: [
       {
         name: "University of Jakarta",
-        description: <>Studied software engineering.</>,
+        description: <>تحصیل در رشته مهندسی نرم‌افزار.</>,
       },
       {
         name: "Build the Future",
-        description: <>Studied online marketing and personal branding.</>,
+        description: <>مطالعه در زمینه بازاریابی آنلاین و برندسازی شخصی.</>,
       },
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
-    title: "Technical skills",
+    display: true,
+    title: "مهارت‌های فنی",
     skills: [
       {
         title: "Figma",
         description: (
-          <>Able to prototype in Figma with Once UI with unnatural speed.</>
+            <>
+              توانایی طراحی و ساخت پروتوتایپ در Figma با استفاده از Once UI با
+              سرعت بالا.
+            </>
         ),
         tags: [
           {
@@ -183,7 +188,6 @@ const about: About = {
             icon: "figma",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
@@ -202,7 +206,9 @@ const about: About = {
       {
         title: "Next.js",
         description: (
-          <>Building next gen apps with Next.js + Once UI + Supabase.</>
+            <>
+              توسعه اپلیکیشن‌های مدرن با Next.js، Once UI و Supabase.
+            </>
         ),
         tags: [
           {
@@ -218,7 +224,6 @@ const about: About = {
             icon: "supabase",
           },
         ],
-        // optional: leave the array empty if you don't want to display images
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
@@ -234,29 +239,23 @@ const about: About = {
 
 const blog: Blog = {
   path: "/blog",
-  label: "Blog",
-  title: "Writing about design and tech...",
-  description: `Read what ${person.name} has been up to recently`,
-  // Create new blog posts by adding a new .mdx file to app/blog/posts
-  // All posts will be listed on the /blog route
+  label: "بلاگ",
+  title: "نوشته‌هایی درباره طراحی و تکنولوژی...",
+  description: `مطالب و فعالیت‌های اخیر ${person.name} را بخوانید`,
 };
 
 const work: Work = {
   path: "/work",
-  label: "Work",
-  title: `Projects – ${person.name}`,
-  description: `Design and dev projects by ${person.name}`,
-  // Create new project pages by adding a new .mdx file to app/blog/posts
-  // All projects will be listed on the /home and /work routes
+  label: "پروژه‌ها",
+  title: `پروژه‌ها – ${person.name}`,
+  description: `پروژه‌های طراحی و توسعه توسط ${person.name}`,
 };
 
 const gallery: Gallery = {
   path: "/gallery",
-  label: "Gallery",
-  title: `Photo gallery – ${person.name}`,
-  description: `A photo collection by ${person.name}`,
-  // Images by https://lorant.one
-  // These are placeholder images, replace with your own
+  label: "گالری",
+  title: `گالری تصاویر – ${person.name}`,
+  description: `مجموعه‌ای از تصاویر ثبت شده توسط ${person.name}`,
   images: [
     {
       src: "/images/gallery/horizontal-1.jpg",
