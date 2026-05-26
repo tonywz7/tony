@@ -16,12 +16,13 @@ import { home } from "./index";
 // IMPORTANT: Replace with your own domain address - it's used for SEO in meta tags and schema
 const baseURL: string = "https://demo.magic-portfolio.com";
 
+// 1. Turned off the routes for /blog and /gallery so they no longer build or display in the navigation layout
 const routes: RoutesConfig = {
   "/": true,
   "/about": true,
   "/work": true,
-  "/blog": true,
-  "/gallery": true,
+  "/blog": false,
+  "/gallery": false,
 };
 
 const display: DisplayConfig = {
@@ -31,9 +32,9 @@ const display: DisplayConfig = {
 };
 
 // Enable password protection on selected routes
-// Set password in the .env file, refer to .env.example
+// 2. Swapped out the boilerplate demo project path with your actual portfolio case study route
 const protectedRoutes: ProtectedRoutesConfig = {
-  "/work/automate-design-handovers-with-a-figma-to-code-pipeline": true,
+  "/work/stem-minds-ai-crop-health-assistant": false, // Set to true if you want this password protected
 };
 
 // Import and set font for each variant
@@ -140,6 +141,7 @@ const effects: EffectsConfig = {
   },
 };
 
+// 3. Left config intact for the layout compilation, but newsletter display flag is false in index file
 const mailchimp: MailchimpConfig = {
   action: "https://url/subscribe/post?parameters",
   effects: {
@@ -184,25 +186,23 @@ const mailchimp: MailchimpConfig = {
   },
 };
 
-// default schema data
+// 4. Cleaned up global metadata structure using your name and software engineer contact profile
 const schema: SchemaConfig = {
   logo: "",
-  type: "Organization",
-  name: "Once UI",
+  type: "Person",
+  name: "Apeksha Nanda",
   description: home.description,
-  email: "lorant@once-ui.com",
+  email: "apekshananda51@gmail.com",
 };
 
-// social links
+// 5. Updated social tracking hooks to reference your specific professional URLs
 const sameAs: SameAsConfig = {
-  threads: "https://www.threads.com/@once_ui",
-  linkedin: "https://www.linkedin.com/company/once-ui/",
-  discord: "https://discord.com/invite/5EyAQ4eNdS",
+  linkedin: "https://www.linkedin.com/in/apeksha-nanda-197977214/",
 };
 
-// social sharing configuration for blog posts
+// 6. Set to false since the blog engine routes are disabled
 const socialSharing: SocialSharingConfig = {
-  display: true,
+  display: false,
   platforms: {
     x: true,
     linkedin: true,
