@@ -10,7 +10,6 @@ import {
   Row,
   Text,
   SmartLink,
-  Avatar,
   Media,
   Line,
 } from "@once-ui-system/core";
@@ -65,10 +64,7 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
     notFound();
   }
 
-  const avatars =
-    post.metadata.team?.map((person) => ({
-      src: person.avatar,
-    })) || [];
+
 
   return (
     <Row fillWidth>
@@ -90,7 +86,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
             author={{
               name: person.name,
               url: `${baseURL}${about.path}`,
-              image: `${baseURL}${person.avatar}`,
             }}
           />
           <Column maxWidth="s" gap="16" horizontal="center" align="center">
@@ -114,7 +109,6 @@ export default async function Blog({ params }: { params: Promise<{ slug: string 
           </Column>
           <Row marginBottom="32" horizontal="center">
             <Row gap="16" vertical="center">
-              <Avatar size="s" src={person.avatar} />
               <Text variant="label-default-m" onBackground="brand-weak">
                 {person.name}
               </Text>

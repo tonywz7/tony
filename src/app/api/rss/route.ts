@@ -22,11 +22,7 @@ export async function GET() {
     <atom:link href="${baseURL}/api/rss" rel="self" type="application/rss+xml" />
     <managingEditor>${person.email || "noreply@example.com"} (${person.name})</managingEditor>
     <webMaster>${person.email || "noreply@example.com"} (${person.name})</webMaster>
-    <image>
-      <url>${baseURL}${person.avatar || "/images/avatar.jpg"}</url>
-      <title>${blog.title}</title>
-      <link>${baseURL}/blog</link>
-    </image>
+
     ${sortedPosts
       .map(
         (post) => `

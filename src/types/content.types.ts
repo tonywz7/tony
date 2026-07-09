@@ -19,8 +19,8 @@ export type Person = {
   name: string;
   /** Role or job title */
   role: string;
-  /** Path to avatar image */
-  avatar: string;
+  /** Path to avatar image (optional) */
+  avatar?: string;
   /** Email address */
   email: string;
   /** IANA time zone location */
@@ -92,11 +92,11 @@ export interface BasePageConfig {
  * Home page configuration.
  */
 export interface Home extends BasePageConfig {
-  /** The image to be displayed in metadata
+  /** The image to be displayed in metadata (optional)
    *
    * The image needs to be put inside `/public/images/` directory
    */
-  image: `/images/${string}` | string;
+  image?: `/images/${string}` | string;
   /** The headline of the home page */
   headline: React.ReactNode;
   /** Featured badge, which appears above the headline */

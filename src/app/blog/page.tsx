@@ -26,7 +26,6 @@ export default function Blog() {
         author={{
           name: person.name,
           url: `${baseURL}/blog`,
-          image: `${baseURL}${person.avatar}`,
         }}
       />
       <Heading marginBottom="l" variant="heading-strong-xl" marginLeft="24">
