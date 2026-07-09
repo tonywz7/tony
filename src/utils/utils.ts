@@ -5,7 +5,7 @@ import matter from "gray-matter";
 type Team = {
   name: string;
   role: string;
-  avatar: string;
+  avatar?: string | null;
   linkedIn: string;
 };
 
